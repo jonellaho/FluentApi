@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{491CE4D9-6B3D-44AE-A914-3DFC0CB844C0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fluent.ConsoleApp</RootNamespace>
+    <AssemblyName>Fluent.ConsoleApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\PropertiesDataAnnotations.cs" />
+    <Compile Include="Commands\PropertiesFluentAPI.cs" />
+    <Compile Include="Commands\RelationshipsDataAnnotations.cs" />
+    <Compile Include="Commands\RelationshipsFluentAPI.cs" />
+    <Compile Include="Commands\TableInheritanceFluentAPI.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Commands\TableInheritanceDataAnnotations.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fluent.InheritanceMapped\Fluent.InheritanceMapped.csproj">
+      <Project>{d006b8d7-2ad1-41e4-b9b7-5c52ca52b538}</Project>
+      <Name>Fluent.InheritanceMapped</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fluent.Inheritance\Fluent.Inheritance.csproj">
+      <Project>{ea220326-b1f6-447f-98bd-e580da481e55}</Project>
+      <Name>Fluent.Inheritance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fluent.PropertyMapped\Fluent.PropertyMapped.csproj">
+      <Project>{158a8c91-f1b9-4d45-b5ae-f0e10d40f346}</Project>
+      <Name>Fluent.PropertyMapped</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fluent.Property\Fluent.Property.csproj">
+      <Project>{37bdc8d6-7db0-4cde-95d3-529a9be79aee}</Project>
+      <Name>Fluent.Property</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fluent.RelationshipMapped\Fluent.RelationshipMapped.csproj">
+      <Project>{bf14b4ff-e76d-4eb7-b419-018b672f6ed1}</Project>
+      <Name>Fluent.RelationshipMapped</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fluent.Relationship\Fluent.Relationship.csproj">
+      <Project>{9f64723c-213c-4f31-8772-8c189960e151}</Project>
+      <Name>Fluent.Relationship</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
